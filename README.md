@@ -1,7 +1,7 @@
 # ElectronCRUD
 <pre><b>Project Requirements</b>
 Database : Mongodb
-Node.js, angularjs, Electron js</pre>
+Node.js, angularjs, Electronjs</pre>
 
 <pre><b>How to use ? </b> <br>
 step 1: npm install
