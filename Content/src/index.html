@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Electron Express CRUD</title>
+
+    <meta name="description" content="Learning Electron">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+ 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/appjs/CRUDapp.js"></script>
+	<script src="js/Controller/CRUDController.js"></script>
+	
+
+  </head>
+  <body ng-app="CRUDapp">
+    <div class="container-fluid"  ng-controller="CRUDController">
+		<div class="row">
+		   <div class="col-md-12">
+		      <div >
+		         <h3>
+		            Electron Express Demo
+		         </h3>
+		      </div>
+		      <form role="form">
+		         <div class="form-group">
+		            <label for="FName">
+		            First Name
+		            </label>
+		            <input type="text" class="form-control" id="FName" ng-model="formData.firstName">
+		            <label for="LName">
+		            Last Name
+		            </label>
+		            <input type="text" class="form-control" id="LName" ng-model="formData.lastName">
+		            <label for="Email">
+		            Email address
+		            </label>
+		            <input type="email" class="form-control" id="Email" ng-model="formData.email">
+		         </div>
+		         <div class="form-group">
+		            <label for="Password">
+		            Password
+		            </label>
+		            <input type="password" class="form-control" id="Password" ng-model="formData.password">
+		         </div>
+		         <input type="button" class="btn btn-default" ng-click="addDetails()" value="Submit">
+		      </form>
+		   </div>
+		</div>
+		<input type="button" class="btn btn-default" ng-click="getDetails()" value="Get Details">
+						
+		<div class="row">
+		<div class="col-md-12">
+		<table class="table">
+			<tr>
+				<th>Firstname</th>
+				<th>lastname</th>
+				<th>email</th>
+			</tr>
+			{{firstName}}
+			<tr ng-repeat="detail in details track by $index">
+			<td>{{detail.firstName}}</td><td>{{detail.lastName}}</td><td>{{detail.email}}</td>
+			</tr>
+		</table>
+		</div>
+		</div>
+	</div>
+
+  </body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+model1 :<input type="text" ng-model="detail.model1" > <br>
+model2 :<input type="text" ng-model="detail.model2" > <br>
+model3 :<input type="text" ng-model="detail.model3" > <br>
+model4 :<input type="text" ng-model="detail.model4" > <br>
+
+<button ng-click="getDetails()">GET DETAILS</button>
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+
+    $scope.getDetails = function(){
+    	console.log($scope.detail)
+    }
+});
+</script>
+
+</body>
+</html> -->

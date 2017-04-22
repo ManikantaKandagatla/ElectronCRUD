@@ -1,0 +1,31 @@
+{
+  "name": "mkfirstapp",
+  "version": "1.0.0",
+  "description": "learning node.js and electron ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run db\" \"npm run electron\" ",
+	"electron" : "electron .",
+	"db" : "node db.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManikantaKandagatla/ElectronCRUD.git"
+  },
+  "keywords": [
+    "electron",
+    "node.js"
+  ],
+  "author": "manikantakandagatla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManikantaKandagatla/ElectronCRUD/issues"
+  },
+  "homepage": "https://github.com/ManikantaKandagatla/ElectronCRUD#readme",
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26"
+  }
+}
